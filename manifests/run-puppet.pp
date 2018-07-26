@@ -4,6 +4,15 @@ file { '/usr/local/bin/run-puppet':
   mode   => '0755',
 }
 
+file { '/tmp/hello.txt':
+
+     ensure => file,
+
+     content =>  "#This file is managed by puppet\n Welcome World\n",
+
+      }
+
+
 cron { 'run-puppet':
   command => '/usr/local/bin/run-puppet',
   hour    => '*',
